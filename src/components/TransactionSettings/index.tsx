@@ -1,7 +1,7 @@
-import React, { useState, useRef, useContext, useCallback } from 'react'
+import React, { useCallback, useContext, useRef, useState } from 'react'
 import styled, { css, ThemeContext } from 'styled-components'
 import { t, Trans } from '@lingui/macro'
-import { Text, Flex } from 'rebass'
+import { Flex, Text } from 'rebass'
 import { X } from 'react-feather'
 import QuestionHelper from '../QuestionHelper'
 import { TYPE } from '../../theme'
@@ -10,22 +10,20 @@ import { RowBetween, RowFixed } from '../Row'
 import { darken } from 'polished'
 import {
   useExpertModeManager,
-  useUserSlippageTolerance,
-  useUserTransactionTTL,
   useShowLiveChart,
+  useShowTopTrendingSoonTokens,
   useShowTradeRoutes,
   useToggleLiveChart,
-  useToggleTradeRoutes,
   useToggleTopTrendingTokens,
-  useShowTopTrendingSoonTokens,
-  // useShowTokenInfo,
-  // useToggleTokenInfo,
+  useToggleTradeRoutes,
+  useUserSlippageTolerance,
+  useUserTransactionTTL,
 } from 'state/user/hooks'
 import useTheme from 'hooks/useTheme'
-import { useModalOpen, useToggleTransactionSettingsMenu, useToggleModal } from 'state/application/hooks'
+import { useModalOpen, useToggleModal, useToggleTransactionSettingsMenu } from 'state/application/hooks'
 import Toggle from 'components/Toggle'
 import Modal from 'components/Modal'
-import { ButtonPrimary, ButtonOutlined } from 'components/Button'
+import { ButtonOutlined, ButtonPrimary } from 'components/Button'
 import { ApplicationModal } from 'state/application/actions'
 import TransactionSettingsIcon from 'components/Icons/TransactionSettingsIcon'
 import Tooltip from 'components/Tooltip'
@@ -34,6 +32,10 @@ import { isMobile } from 'react-device-detect'
 import useMixpanel, { MIXPANEL_TYPE } from 'hooks/useMixpanel'
 import useTopTrendingSoonTokensInCurrentNetwork from 'components/TopTrendingSoonTokensInCurrentNetwork/useTopTrendingSoonTokensInCurrentNetwork'
 import { StyledActionButtonSwapForm } from 'components/swapv2/styleds'
+import { isEqual } from 'utils/numbers'
+import { parseUnits } from '@ethersproject/units'
+import { MAX_SLIPPAGE_IN_BIPS } from 'constants/index'
+
 enum SlippageError {
   InvalidInput = 'InvalidInput',
   RiskyLow = 'RiskyLow',
@@ -199,7 +201,7 @@ export function SlippageTabs({ rawSlippage, setRawSlippage, deadline, setDeadlin
   const [deadlineInput, setDeadlineInput] = useState('')
 
   const slippageInputIsValid =
-    slippageInput === '' || (rawSlippage / 100).toFixed(2) === Number.parseFloat(slippageInput).toFixed(2)
+    slippageInput === '' || isEqual(rawSlippage / 100, Number.parseFloat(slippageInput), 0.01)
   const deadlineInputIsValid = deadlineInput === '' || (deadline / 60).toString() === deadlineInput
 
   let slippageError: SlippageError | undefined
@@ -224,8 +226,16 @@ export function SlippageTabs({ rawSlippage, setRawSlippage, deadline, setDeadlin
     setSlippageInput(value)
 
     try {
+      /*
       const valueAsIntFromRoundedFloat = Number.parseInt((Number.parseFloat(value) * 100).toString())
-      if (!Number.isNaN(valueAsIntFromRoundedFloat) && valueAsIntFromRoundedFloat < 5000) {
+      This above code will cause unexpected bug when value = 4.1
+      => Number.parseFloat(4.1) * 100 = 409.99999999999994
+      => Number.parseInt(409.99999999999994) = 409
+      => Wrong, expected 410.
+      => Use parseUnits(value, 2) is safe.
+      */
+      const valueAsIntFromRoundedFloat = Number.parseInt(parseUnits(value, 2).toString())
+      if (!Number.isNaN(valueAsIntFromRoundedFloat) && valueAsIntFromRoundedFloat <= MAX_SLIPPAGE_IN_BIPS) {
         setRawSlippage(valueAsIntFromRoundedFloat)
       }
     } catch {}
@@ -353,7 +363,7 @@ export function SlippageTabs({ rawSlippage, setRawSlippage, deadline, setDeadlin
 
 export default function TransactionSettings({ isShowDisplaySettings = false }: { isShowDisplaySettings?: boolean }) {
   const theme = useTheme()
-  const [userSlippageTolerance, setUserslippageTolerance] = useUserSlippageTolerance()
+  const [userSlippageTolerance, setUserSlippageTolerance] = useUserSlippageTolerance()
   const [ttl, setTtl] = useUserTransactionTTL()
   const [expertMode, toggleExpertMode] = useExpertModeManager()
   const toggle = useToggleTransactionSettingsMenu()
@@ -485,7 +495,7 @@ export default function TransactionSettings({ isShowDisplaySettings = false }: {
           <>
             <SlippageTabs
               rawSlippage={userSlippageTolerance}
-              setRawSlippage={setUserslippageTolerance}
+              setRawSlippage={setUserSlippageTolerance}
               deadline={ttl}
               setDeadline={setTtl}
             />
