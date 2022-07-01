@@ -403,10 +403,10 @@ export const KNC: { [chainId in ChainId]: Token } = {
   ),
   [ChainId.BSCMAINNET]: new Token(
     ChainId.BSCMAINNET,
-    '0xfe56d5892BDffC7BF58f2E84BE1b2C32D21C308b',
+    '0x02F50BF34918D5e4b6506ef35f829d7237F64Ac1',
     18,
-    'KNC',
-    'Kyber Network Crystal',
+    'LIL',
+    'Lillion DeFi',
   ),
   [ChainId.AVAXTESTNET]: new Token(ChainId.AVAXTESTNET, KNC_ADDRESS, 18, 'KNC', 'Kyber Network Crystal'),
   [ChainId.AVAXMAINNET]: new Token(
@@ -875,8 +875,8 @@ export const COINGECKO_API_URL = 'https://api.coingecko.com/api/v3'
 export const KNC_COINGECKO_ID = 'kyber-network-crystal'
 
 export const ETHER_ADDRESS = '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE'
-export const KYBER_NETWORK_DISCORD_URL = 'https://discord.com/invite/NB3vc8J9uv'
-export const KYBER_NETWORK_TWITTER_URL = 'https://twitter.com/KyberNetwork'
+export const KYBER_NETWORK_DISCORD_URL = 'https://discord.gg/lillion'
+export const KYBER_NETWORK_TWITTER_URL = 'https://twitter.com/lillionorg'
 
 export const DEFAULT_GAS_LIMIT_MARGIN = 20000
 
