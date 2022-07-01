@@ -56,7 +56,7 @@ if (process.env.REACT_APP_GTM_ID) {
   TagManager.initialize(tagManagerArgs)
 }
 
-if (window.location.href.includes('kyberswap')) {
+if (window.location.href.includes('Lillion')) {
   Sentry.init({
     dsn: process.env.REACT_APP_SENTRY_DNS,
   })
@@ -80,8 +80,8 @@ const ReactApp = ({ hideLoader }: { hideLoader: () => void }) => {
   return (
     <StrictMode>
       <SEO
-        title="KyberSwap - Swap and earn tokens at the best rates"
-        description="KyberSwap is DeFi‚Äôs first Dynamic Market Maker; a decentralized exchange protocol that provides frictionless crypto liquidity with extremely high flexibility and capital efficiency. KyberSwap is the first major protocol in Kyber‚Äôs liquidity hub."
+        title="Lillion - Swap and earn tokens at the best rates"
+        description="Lillion is DeFi‚Äôs Dynamic Market Maker; a decentralized exchange protocol that provides frictionless crypto liquidity with extremely high flexibility and capital efficiency. Lillion is the first major protocol in Lillion‚Äôs liquidity hub."
       />
       <FixedGlobalStyle />
       <Provider store={store}>
