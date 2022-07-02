@@ -56,7 +56,7 @@ const IncreaseLiquidity = lazy(() => import(/* webpackChunkName: 'add-liquidity-
 const RemoveLiquidity = lazy(() => import(/* webpackChunkName: 'remove-liquidity-page' */ './RemoveLiquidity'))
 
 const AboutLillion = lazy(() => import(/* webpackChunkName: 'about-page' */ './About/AboutLillion'))
-const AboutLIL = lazy(() => import(/* webpackChunkName: 'about-knc' */ './About/AboutLIL'))
+const AboutLIL = lazy(() => import(/* webpackChunkName: 'about-lil' */ './About/AboutLIL'))
 
 const CreateReferral = lazy(() => import(/* webpackChunkName: 'create-referral-page' */ './CreateReferral'))
 
