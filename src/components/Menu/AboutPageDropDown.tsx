@@ -30,11 +30,11 @@ export default function AboutPageDropwdown() {
       </NavMenuItem>
       {isShowOptions && (
         <LinkContainer>
-          <NavMenuItem to="/about/kyberswap" onClick={toggle}>
-            <Trans>Kyberswap</Trans>
+          <NavMenuItem to="/about/lillion" onClick={toggle}>
+            <Trans>Lillion</Trans>
           </NavMenuItem>
-          <NavMenuItem to="/about/knc" onClick={toggle}>
-            <Trans>KNC</Trans>
+          <NavMenuItem to="/about/lil" onClick={toggle}>
+            <Trans>LIL</Trans>
           </NavMenuItem>
         </LinkContainer>
       )}
