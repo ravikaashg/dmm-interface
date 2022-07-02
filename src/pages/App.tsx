@@ -55,8 +55,8 @@ const IncreaseLiquidity = lazy(() => import(/* webpackChunkName: 'add-liquidity-
 
 const RemoveLiquidity = lazy(() => import(/* webpackChunkName: 'remove-liquidity-page' */ './RemoveLiquidity'))
 
-const AboutKyberSwap = lazy(() => import(/* webpackChunkName: 'about-page' */ './About/AboutKyberSwap'))
-const AboutKNC = lazy(() => import(/* webpackChunkName: 'about-knc' */ './About/AboutKNC'))
+const AboutLillion = lazy(() => import(/* webpackChunkName: 'about-page' */ './About/AboutLillion'))
+const AboutLIL = lazy(() => import(/* webpackChunkName: 'about-knc' */ './About/AboutLIL'))
 
 const CreateReferral = lazy(() => import(/* webpackChunkName: 'create-referral-page' */ './CreateReferral'))
 
@@ -165,14 +165,14 @@ export default function App() {
     <>
       {width && width >= 768 ? (
         <Sidetab
-          id={isDarkTheme ? 'W5TeOyyH' : 'K0dtSO0v'}
+          id={isDarkTheme ? 'glcXnl2h' : 'glcXnl2h'}
           buttonText="Feedback"
           buttonColor={theme.primary}
           customIcon={isDarkTheme ? 'https://i.imgur.com/iTOOKnr.png' : 'https://i.imgur.com/aPCpnGg.png'}
         />
       ) : (
         <Popover
-          id={isDarkTheme ? 'W5TeOyyH' : 'K0dtSO0v'}
+          id={isDarkTheme ? 'glcXnl2h' : 'glcXnl2h'}
           customIcon={isDarkTheme ? 'https://i.imgur.com/iTOOKnr.png' : 'https://i.imgur.com/aPCpnGg.png'}
         />
       )}
@@ -241,8 +241,8 @@ export default function App() {
                       component={IncreaseLiquidity}
                     />
 
-                    <Route exact path="/about/kyberswap" component={AboutKyberSwap} />
-                    <Route exact path="/about/knc" component={AboutKNC} />
+                    <Route exact path="/about/lillion" component={AboutLillion} />
+                    <Route exact path="/about/lil" component={AboutLIL} />
                     <Route exact path="/referral" component={CreateReferral} />
                     <Route exact path="/discover" component={TrueSight} />
                     <Route exact path="/buy-crypto" component={BuyCrypto} />
