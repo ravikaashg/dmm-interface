@@ -285,7 +285,7 @@ export const CommittedToSecurityDivider = styled.div<{ height?: string }>`
   background: ${({ theme }) => theme.border};
 `
 
-export const AboutKNC = styled.div`
+export const AboutLIL = styled.div`
   margin-top: 160px;
   gap: 76px;
   display: flex;
