@@ -20,8 +20,8 @@ export default (
     <Route
     path="/remove/:currencyIdA/:currencyIdB/:pairAddress"
     />
-    <Route path="/about/kyberswap" />
-    <Route path="/about/knc" />
+    <Route path="/about/lillion" />
+    <Route path="/about/lil" />
     <Route path="/referral" />
     <Route path="/discover" />
     <Redirect to='/swap'/>
