@@ -411,13 +411,13 @@ function AboutLIL() {
               flexDirection={'column'}
             >
               <Text as="h2" fontWeight="500" fontSize={['28px', '36px']}>
-                <Trans>More information about KNC is available on:</Trans>
+                <Trans>More information about LIL is available on:</Trans>
               </Text>
               <Flex flexDirection={above768 ? 'row' : 'column'} marginTop="48px" style={{ gap: '48px' }}>
-                <ExternalLink href={`https://www.coingecko.com/en/coins/kyber-network-crystal`}>
+                <ExternalLink href={`https://www.coingecko.com/en/coins/lillion`}>
                   <img src={isDarkMode ? CoinGecko : CoinGeckoLight} alt="CoinGecko" width="165px" />
                 </ExternalLink>
-                <ExternalLink href={`https://coinmarketcap.com/currencies/kyber-network-crystal-v2/`}>
+                <ExternalLink href={`https://coinmarketcap.com/currencies/lillion/`}>
                   <img src={isDarkMode ? CoinMarketCap : CoinMarketCapLight} alt="CoinMarketCap" width="227px" />
                 </ExternalLink>
               </Flex>
