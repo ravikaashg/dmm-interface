@@ -97,12 +97,12 @@ export default function AboutPageDropdown() {
         <DropdownIcon />
       </Flex>
       <Dropdown>
-        <StyledNavLink id={`about-kyberswap`} to={'/about/kyberswap'} isActive={match => Boolean(match)}>
-          <Trans>KyberSwap</Trans>
+        <StyledNavLink id={`about-lillion`} to={'/about/lillion'} isActive={match => Boolean(match)}>
+          <Trans>Lillion</Trans>
         </StyledNavLink>
 
-        <StyledNavLink id={`about-knc`} to={'/about/knc'} isActive={match => Boolean(match)}>
-          <Trans> KNC</Trans>
+        <StyledNavLink id={`about-lil`} to={'/about/lil'} isActive={match => Boolean(match)}>
+          <Trans> LIL</Trans>
         </StyledNavLink>
       </Dropdown>
     </HoverDropdown>
