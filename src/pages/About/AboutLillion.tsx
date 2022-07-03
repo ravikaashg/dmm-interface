@@ -621,7 +621,7 @@ function AboutLillion() {
                 style={{ display: above768 ? 'none' : 'block', margin: 'auto', marginTop: '40px' }}
               />
               <BtnPrimary as={Link} to="/about/lil" margin="48px 0">
-                <img width="14px" src={KNCBlack} alt="KNCBlack" />
+                <img width="20px" src={KNCBlack} alt="LILBlack" />
                 <Text fontSize={['14px', '16px']} marginLeft="8px">
                   <Trans>Find out more</Trans>
                 </Text>
@@ -917,47 +917,6 @@ function AboutLillion() {
               </BtnOutlined>
             </Flex>
           </Flex>
-
-          <Text as="h2" marginTop={['100px', '160px']} fontSize={['28px', '36px']} fontWeight="500" textAlign="center">
-            <Trans>Committed to Security</Trans>
-          </Text>
-
-          <Flex
-            marginTop="40px"
-            sx={{ gap: above992 ? '24px' : '0' }}
-            flexDirection={above992 ? 'row' : 'column'}
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Flex
-              flex={1}
-              sx={{ gap: above992 ? '24px' : '10px' }}
-              alignItems="center"
-              justifyContent="center"
-              width="100%"
-            >
-              <div style={{ flex: 1, textAlign: 'center' }}>
-                <Text color={theme.subText} textAlign="center" marginBottom={above992 ? '21px' : '14px'}>
-                  <Trans>Code Audited</Trans>
-                </Text>
-
-                <ButtonEmpty padding="0">
-                  <ExternalLink href="https://docs.lillion.org/">
-                    <img
-                      src={
-                        !isDarkMode
-                          ? 'https://chainsecurity.com/wp-content/themes/chainsecurity-wp/resources/images/temp/logo.svg'
-                          : require('../../assets/svg/chainsecurity.svg')
-                      }
-                      alt="security"
-                      width={above992 ? '197px' : '140px'}
-                    />
-                  </ExternalLink>
-                </ButtonEmpty>
-              </div>
-
-              <CommittedToSecurityDivider height={!above992 ? '110px' : undefined} />
-
               <div style={{ flex: 1, textAlign: 'center' }}>
                 <Text color={theme.subText} textAlign="center" marginBottom={above992 ? '24px' : '12px'}>
                   <Trans>Insured by</Trans>
@@ -978,39 +937,6 @@ function AboutLillion() {
               </div>
             </Flex>
 
-            {above992 ? <CommittedToSecurityDivider /> : <div />}
-
-            <Flex
-              flex={1}
-              sx={{ gap: above992 ? '24px' : '10px' }}
-              alignItems="center"
-              justifyContent="center"
-              width="100%"
-            >
-              <div style={{ flex: 1, textAlign: 'center' }}>
-                <Text color={theme.subText} textAlign="center" marginBottom={above992 ? '16px' : '12px'}>
-                  <Trans>On-chain & Open Source</Trans>
-                </Text>
-                <ButtonEmpty padding="0">
-                  <ExternalLink href="https://github.com/lillionorg">
-                    <img src={isDarkMode ? githubImg : githubImgLight} alt="github" width="125px" />
-                  </ExternalLink>
-                </ButtonEmpty>
-              </div>
-              <CommittedToSecurityDivider height={!above992 ? '110px' : undefined} />
-
-              <div style={{ flex: 1, textAlign: 'center' }}>
-                <Text color={theme.subText} textAlign="center" marginBottom="16px">
-                  <Trans>Bug Bounty</Trans>
-                </Text>
-                <img
-                  src={require('../../assets/svg/about_icon_bug_bounty.svg')}
-                  alt="bugbounty"
-                  width={above992 ? '186px' : '140px'}
-                />
-              </div>
-            </Flex>
-          </Flex>
 
           <Text as="h2" marginTop={['100px', '160px']} fontSize={['28px', '36px']} fontWeight="500" textAlign="center">
             <Trans>Powered by</Trans>
