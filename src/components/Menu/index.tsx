@@ -258,7 +258,7 @@ export default function Menu() {
           <Trans>Referral</Trans>
         </NavMenuItem>
         {!above1100 && (
-          <MenuItem id="link" href={DMM_ANALYTICS_URL[chainId as ChainId]}>
+          <MenuItem id="link" href={]}>
             <PieChart size={14} />
             <Trans>Analytics</Trans>
           </MenuItem>
