@@ -150,22 +150,7 @@ function Footer() {
             </ExternalLink>
             {above768 && <InfoHelper size={14} text={t`Avalanche Blockchain`} placement="top" />}
           </Item>
-          <Separator />
-          <Item>
-            <Text marginRight="6px" display="flex">
-              <Trans>Powered By</Trans>
-              {!above768 && <InfoHelper size={14} text={t`Ethereum Blockchain`} placement="top" />}
-            </Text>
-
-            <ExternalLink href="https://ethereum.org/" style={{ display: 'flex' }}>
-              <img
-                src={!isDarkMode ? 'https://lillion.org/59.png' : require('../../assets/svg/58.png')}
-                alt=""
-                width="98px"
-              />
-            </ExternalLink>
-            {above768 && <InfoHelper size={14} text={t`Ethereum Blockchain`} placement="top" />}
-          </Item>
+        
         </InfoWrapper>
         <FooterSocialLink />
       </FooterContent>
