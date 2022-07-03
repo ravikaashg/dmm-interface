@@ -141,7 +141,7 @@ function AboutLIL() {
 
       <Text color={theme.subText} marginTop="24px" textAlign={above500 ? 'start' : 'center'} lineHeight={1.5}>
         <Trans>
-          LIL holders can stake LIL in LillionDAO and vote on important decisions. Voters receive trading fees generated
+          LIL holders can stake LIL in Lillion DAO and vote on important decisions. Voters receive trading fees generated
           on Lillion and other benefits from ecosystem collaborations on Lilllion.
         </Trans>
       </Text>
@@ -163,7 +163,7 @@ function AboutLIL() {
 
       <Text color={theme.subText} marginTop="24px" textAlign={above500 ? 'start' : 'center'} lineHeight={1.5}>
         <Trans>
-          LillionDAO can propose various LIL incentives like liquidity mining rewards on KyberSwap on top of standard
+          Lillion DAO can propose various LIL incentives like liquidity mining rewards on Lillion Swap on top of standard
           trading fees to provide more value to liquidity providers.
         </Trans>
       </Text>
@@ -191,7 +191,7 @@ function AboutLIL() {
             lineHeight={1.5}
           >
             <Trans>
-              LIL is a utility and governance token and an integral part of Lillion Network and its product LillionSwap
+              LIL is a utility and governance token and an integral part of Lillion Network and its product Lillion Swap
               the multi-chain decentralized exchange (DEX) protocol that provides the best rates for traders and
               maximizes earnings for liquidity providers.
             </Trans>
@@ -212,14 +212,14 @@ function AboutLIL() {
           <Text color={theme.subText} marginTop={['40px', '48px']} fontSize="1rem" textAlign="center" lineHeight={1.5}>
             <Trans>
               LIL allows token holders to play a critical role in building a wide base of stakeholders and capturing
-              value created by products like LillionSwap on Lillion Network. LIL holders stake and vote to receive
+              value created by products like Lillion Swap. LIL holders stake and vote to receive
               trading trading trading trading trading trading trading trading trading trading trading fees from
-              protocols like LillionSwap. As for LIL holders.
+              protocols like Lillion Swap.
             </Trans>
           </Text>
           <Text color={theme.subText} marginTop={['20px', '24px']} fontSize="1rem" textAlign="center" lineHeight={1.5}>
             <Trans>
-              LIL is dynamic and can be upgraded, minted, or burned by LillionDAO to better support liquidity and
+              LIL is dynamic and can be upgraded, minted, or burned by Lillion DAO to better support liquidity and
               growth. growth. growth. growth. growth. growth. growth. growth. growth. growth. growth. Holding LIL means
               for DeFi.
             </Trans>
@@ -286,7 +286,7 @@ function AboutLIL() {
                 textAlign="left"
               >
                 <Trans>
-                  LillionDAO is a community platform that allows LIL token holders to participate in governance. LIL
+                  Lillion DAO is a community platform that allows LIL token holders to participate in governance. LIL
                   holders can stake LIL to vote on proposals. In return, they receive rewards from fees generated on
                   LillionSwap through trading activities in Lillion Network.
                 </Trans>
@@ -314,44 +314,7 @@ function AboutLIL() {
               </ExternalLink>
             </Flex>
           </Flex>
-          <Text
-            as="h2"
-            fontWeight="500"
-            marginTop={above768 ? '160px' : '100px'}
-            fontSize={['28px', '36px']}
-            textAlign="center"
-          >
-            <Trans>Where you can buy LIL</Trans>
-          </Text>
-
-          {above768 ? (
-            <Exchange>
-              {LIST_EXCHANGES.map(exchange => (
-                <Flex key={exchange.name} margin="auto">
-                  {exchange.logo}
-                </Flex>
-              ))}
-            </Exchange>
-          ) : (
-            <Swiper
-              slidesPerView={1}
-              spaceBetween={30}
-              modules={[Pagination]}
-              loop={true}
-              pagination={{
-                clickable: true,
-              }}
-              style={{ marginTop: '24px' }}
-            >
-              {LIST_EXCHANGES.map(exchange => (
-                <SwiperSlide key={exchange.name}>
-                  <ExchangeWrapper background={isDarkMode ? '#243036' : '#F5F5F5'}>
-                    <Flex margin="auto">{exchange.logo}</Flex>
-                  </ExchangeWrapper>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          )}
+          
           <Text
             as="h2"
             fontWeight="500"
