@@ -917,26 +917,6 @@ function AboutLillion() {
               </BtnOutlined>
             </Flex>
           </Flex>
-              <div style={{ flex: 1, textAlign: 'center' }}>
-                <Text color={theme.subText} textAlign="center" marginBottom={above992 ? '24px' : '12px'}>
-                  <Trans>Insured by</Trans>
-                </Text>
-                <ButtonEmpty padding="0">
-                  <ExternalLink href="https://lillion.medium.com/">
-                    <img
-                      src={
-                        !isDarkMode
-                          ? require('../../assets/svg/unslashed_light.svg')
-                          : require('../../assets/svg/unslashed.svg')
-                      }
-                      alt="unslashed"
-                      width={above992 ? '170px' : '140px'}
-                    />
-                  </ExternalLink>
-                </ButtonEmpty>
-              </div>
-            </Flex>
-
 
           <Text as="h2" marginTop={['100px', '160px']} fontSize={['28px', '36px']} fontWeight="500" textAlign="center">
             <Trans>Powered by</Trans>
