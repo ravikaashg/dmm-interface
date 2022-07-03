@@ -263,16 +263,16 @@ export default function Menu() {
             <Trans>Analytics</Trans>
           </MenuItem>
         )}
-        <MenuItem id="link" href="https://docs.kyberswap.com">
+        <MenuItem id="link" href="https://docs.lillion.org">
           <BookOpen size={14} />
           <Trans>Docs</Trans>
         </MenuItem>
-        <MenuItem id="link" href="https://gov.kyber.org">
+        <MenuItem id="link" href="https://gov.lillion.org">
           <MessageCircle size={14} />
           <Trans>Forum</Trans>
         </MenuItem>
 
-        <MenuItem id="link" href="/15022022KyberSwapTermsofUse.pdf">
+        <MenuItem id="link" href="https://lillion.org/terms-conditions/">
           <FileText size={14} />
           <Trans>Terms</Trans>
         </MenuItem>
@@ -282,7 +282,7 @@ export default function Menu() {
             <Trans>Swap Legacy</Trans>
           </NavMenuItem>
         )}
-        <MenuItem id="link" href="https://forms.gle/gLiNsi7iUzHws2BY8">
+        <MenuItem id="link" href="https://t.me/lillionorg">
           <Edit size={14} />
           <Trans>Contact Us</Trans>
         </MenuItem>
